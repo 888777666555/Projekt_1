@@ -50,19 +50,15 @@ texts_copy = TEXTS.copy() #kopie textu ze task_template.py
 user_choice_extract = '' #vyber uzivatele
 
 
-if user_text_select == 1:
-    user_choice_extract = texts_copy[0]    
-elif user_text_select == 2:
-    user_choice_extract = texts_copy[1]    
-elif user_text_select == 3:
-    user_choice_extract = texts_copy[2]    
-else:
-    print(f'Attention, the entered character {user_choice_extract} does not exist, it must be a number from 1 to 3.')
-
+for i in texts_copy:
+    if user_text_select > 0 and user_text_select < 4:
+        user_choice_extract = texts_copy[user_text_select -1]
+    else:
+        print(f'Attention, the entered character {user_choice_extract} does not exist, it must be a number from 1 to 3.')
+        quit()
+    
 
 print(line)
-
-# statistiky
 
 #pocet slov
 clean_words = [] # vycistene slova
@@ -135,9 +131,6 @@ for key, value in frequency.items():
 
 
 
-        
-
-    
 
 
 
